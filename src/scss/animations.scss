@@ -1,0 +1,40 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.carousel-enter {
+  opacity: 0.01;
+}
+
+.carousel-enter.carousel-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.carousel-leave {
+  opacity: 1;
+}
+
+.carousel-leave.carousel-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+
+@keyframes flash {
+  from,
+  50%,
+  to {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
