@@ -21,8 +21,12 @@ const Headshot = () => {
         arban.nichs@gmail.com
         <i className="icon ion-md-copy" onClick={handleClick} />
       </p>
-      <i className="icon ion-logo-linkedin" />
-      <i className="icon ion-logo-github" />
+      <a href="https://linkedin.com/in/arban-nichols" target="_blank">
+        <i className="icon ion-logo-linkedin" />
+      </a>
+      <a href="https://github.com/ArbanNichols" target="_blank">
+        <i className="icon ion-logo-github" />
+      </a>
     </div>
   );
 };

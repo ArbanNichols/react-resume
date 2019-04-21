@@ -40,7 +40,7 @@ const Header = () => {
             </Nav.Item>*/}
           </Nav>
           <Nav className="ml-auto">
-            <Nav.Link>
+            <Nav.Link href="https://github.com/ArbanNichols/react-resume">
               <WordCarousel words={tools} />
             </Nav.Link>
           </Nav>

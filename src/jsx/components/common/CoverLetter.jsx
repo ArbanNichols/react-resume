@@ -17,11 +17,10 @@ const CoverLetter = () => {
         applications optimized for delay laden networks. After my graduation
         from York College in 2016, I worked as an embedded software engineer on
         RTOS such as INTEGRITY and VxWorks. Afterwards I found enjoyment and
-        passion in web development using React.Js UI and NodeJs web servers. I
-        am still early into my career but have used so many different
-        technologies! As of now I am looking to continue down the road of web
-        development and engineering in hopes of becoming a strong full-stack
-        software engineer.
+        passion in creating UI using React.Js and web servers with NodeJs. Wow,
+        so early into my career but I have used so many different technologies!
+        Currently, I am continuing down the road of web development and
+        engineering so as to become a strong full-stack software engineer.
       </p>
     </div>
   );

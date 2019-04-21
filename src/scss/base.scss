@@ -8,11 +8,12 @@
 
 @import 'experience';
 
+// TODO: fix background image to work with Google Chrome.
+// TODO: make website responsive.
+
 body {
   width: 100%;
   height: 100%;
-  top: 0;
-  left: 0;
   position: absolute;
   background-image: url(../static/background.jpg);
   background-repeat: no-repeat;
