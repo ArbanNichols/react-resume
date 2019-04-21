@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "author": "arban.nichs@gmail.com",
   "description": "Arban Nichols' resume built using ReactJs + Webpack",
+  "homepage": "https://username.github.io.",
   "license": "0BSD",
   "keywords": [
     "react",
@@ -12,7 +13,8 @@
   "main": "index.jsx",
   "scripts": {
     "compile": "webpack --config webpack.config.prod.js --display-error-details --display-reasons --colors --env.PLATFORM=local",
-    "start": "webpack-dev-server --config webpack.config.dev.js --colors --env.PLATFORM=local"
+    "start": "webpack-dev-server --config webpack.config.dev.js --colors --env.PLATFORM=local",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "prop-types": "^15.7.2",
