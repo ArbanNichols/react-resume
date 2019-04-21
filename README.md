@@ -1,2 +1,3 @@
-# react-skeleton
-React.Js boilerplate using Webpack 4 and Babel 7.
+# react-resume
+
+Arban Nichols' resume website built using ReactJs.
