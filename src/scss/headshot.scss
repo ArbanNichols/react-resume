@@ -1,8 +1,22 @@
+$mid-screen-size: 768px;
+
 .headshot {
+  img {
+    @media screen and (max-width: $mid-screen-size) {
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+  }
+
   p {
     margin-top: 5px;
     margin-bottom: 0;
     opacity: 0.5;
+
+    @media screen and (max-width: $mid-screen-size) {
+      text-align: center;
+    }
   }
 
   p > i {
@@ -10,12 +24,10 @@
     margin-left: 5px;
   }
 
-  i {
-    color: rgb(255, 255, 255);
-    font-size: 42px;
-    cursor: pointer;
-    transition: 0.3s;
-    opacity: 0.5;
+  .links {
+    @media screen and (max-width: $mid-screen-size) {
+      text-align: center;
+    }
   }
 
   a + a {
@@ -24,5 +36,13 @@
 
   i:hover {
     opacity: 0.8;
+  }
+
+  i {
+    color: rgb(255, 255, 255);
+    font-size: 42px;
+    cursor: pointer;
+    transition: 0.3s;
+    opacity: 0.5;
   }
 }

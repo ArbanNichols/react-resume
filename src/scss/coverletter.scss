@@ -1,12 +1,4 @@
-.coverletter {
-  h1 {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-      'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  }
-  p {
-    margin-top: 10px;
-  }
-}
+$mid-screen-size: 768px;
 
 .jumbo {
   margin-top: 50px;
@@ -14,4 +6,23 @@
   animation-duration: 2s;
   background-color: rgba(52, 58, 64, 0.89);
   color: #fff;
+}
+
+.coverletter {
+  h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+      'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    @media screen and (max-width: $mid-screen-size) {
+      text-align: center;
+      margin-top: 8px;
+    }
+  }
+
+  p {
+    margin-top: 10px;
+    @media screen and (max-width: $mid-screen-size) {
+      margin-top: 24px;
+    }
+  }
 }
