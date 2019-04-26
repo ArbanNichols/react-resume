@@ -49,7 +49,6 @@ module.exports = env => {
         new HtmlWebpackPlugin({
           template: './src/index.html',
           filename: './index.html',
-          favicon: './src/static/favicon.ico',
         }),
         new webpack.DefinePlugin({
           'process.env.PLATFORM': JSON.stringify(env.PLATFORM),
