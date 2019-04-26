@@ -21,10 +21,7 @@ const Header = () => {
       </Modal>
       <Navbar bg="dark" expand="lg" variant="dark" fixed="top">
         <LinkContainer to="/" exact>
-          <Navbar.Brand>
-            {'Arban Nichols '}
-            <span className="cursor">&#9613;</span>
-          </Navbar.Brand>
+          <Navbar.Brand>{'Arban Nichols '}</Navbar.Brand>
         </LinkContainer>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse>

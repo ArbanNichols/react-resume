@@ -1,3 +1,5 @@
+@import 'animations';
+$reactBlue: #00d8ff;
 $mid-screen-size: 768px;
 
 .jumbo {
@@ -8,10 +10,19 @@ $mid-screen-size: 768px;
   color: #fff;
 }
 
+.cursor {
+  color: $reactBlue;
+  position: relative;
+  bottom: 2px;
+  animation: 2s ease-in-out infinite flash;
+}
+
 .coverletter {
   h1 {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
       'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    font-family: 'Inconsolata', monospace;
 
     @media screen and (max-width: $mid-screen-size) {
       text-align: center;

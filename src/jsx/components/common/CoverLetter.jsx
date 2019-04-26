@@ -3,7 +3,9 @@ import React from 'react';
 const CoverLetter = () => {
   return (
     <div className="coverletter">
-      <h1>whoami</h1>
+      <h1>
+        ~$ whoami<span className="cursor">&#9613;</span>
+      </h1>
       <strong>TLDR; </strong>
       <span>
         Veteran Air Force Electrician retrained to provide you websites and web
