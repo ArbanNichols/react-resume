@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup.js';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { useInterval } from '../../../js/hooks';
 
 const WordCarousel = props => {
@@ -15,13 +15,15 @@ const WordCarousel = props => {
 
   return (
     <>
-      <CSSTransitionGroup
-        transitionName="carousel"
-        transitionEnterTimeout={500}
-        transitionLeaveTimeout={0.5}
-      >
-        <span key={words[index]}>{words[index]}</span>
-      </CSSTransitionGroup>
+      <TransitionGroup>
+        <CSSTransition
+          key={words[index]}
+          classNames="carousel"
+          timeout={{ enter: 500, exit: 0.5 }}
+        >
+          <span>{words[index]}</span>
+        </CSSTransition>
+      </TransitionGroup>
     </>
   );
 };

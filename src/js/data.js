@@ -56,7 +56,7 @@ const tools = [
   'react-router-dom v4.3.1',
   'webpack v4.29.6',
   'babel/core v7.3.4',
-  'react-transition-group v1.2.1',
+  'react-transition-group v4.0.0',
   'react-hooks',
   'sass',
   'npm',
