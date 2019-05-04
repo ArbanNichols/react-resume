@@ -33,7 +33,7 @@ module.exports = env => {
             ],
           },
           {
-            test: /\.(ico|jpg)$/,
+            test: /\.(ico|jpg|png)$/,
             use: [{ loader: 'file-loader', options: {} }],
           },
           {
