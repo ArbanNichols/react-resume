@@ -6,20 +6,18 @@ const Experience = ({ ...props }) => {
   const { bullets, location, dates, company, title } = props;
 
   return (
-    <Row>
-      <Col>
-        <h2>{company}</h2>
-        <strong>{title}</strong>
-        <br />
-        <em>{dates}</em>
-        <span>{location}</span>
-        <ul>
-          {bullets.map(bullet => (
-            <li key={uuid()}>{bullet}</li>
-          ))}
-        </ul>
-      </Col>
-    </Row>
+    <div className="experience">
+      <h2>{company}</h2>
+      <div><i className="icon ion-md-pin"></i>{' '}{location}</div>
+      <strong>{title}</strong>
+      <br />
+      <em>{dates}</em>
+      <ul>
+        {bullets.map(bullet => (
+          <li key={uuid()}>{bullet}</li>
+        ))}
+      </ul>
+    </div>
   );
 };
 

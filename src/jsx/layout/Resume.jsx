@@ -9,8 +9,8 @@ const Resume = props => {
   return (
     <Container>
       <Row>
-        <Col>
-          <Jumbotron>
+        <Col lg={{ span: 10, offset: 1 }}>
+          <Jumbotron className="jumbo-resume">
             <article>
               {experiences.map(
                 ({ company, title, dates, location, bullets }) => (
