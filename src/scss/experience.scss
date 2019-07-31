@@ -1,9 +1,23 @@
-article span {
-  float: right;
+$naranja: #ff5733;
+
+article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.experience {
+  margin-left: 40px;
+  margin-bottom: 20px;
+}
+
+.ion-md-pin {
+  color: $naranja;
 }
 
 ul {
   margin-top: 5px;
+  padding-left: 25px;
 }
 
 .container > .row {

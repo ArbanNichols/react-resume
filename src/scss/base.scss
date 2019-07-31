@@ -6,6 +6,9 @@
 
 @import 'experience';
 
+$reactBlue: #00d8ff;
+
+
 // TODO: fix background image to work with Google Chrome.
 $lg-screen-threshold: 1152px;
 
@@ -36,4 +39,17 @@ body {
   margin-top: 100px;
   align-content: center;
   justify-content: space-evenly;
+}
+
+.jumbo-cv {
+  margin-top: 50px;
+  animation-name: fadeIn;
+  animation-duration: 2s;
+  background-color: rgba(52, 58, 64, 0.89);
+  color: #fff;
+}
+
+.jumbo-resume {
+  background-color: rgba(52, 58, 64, 0.95);
+  color: whitesmoke;
 }

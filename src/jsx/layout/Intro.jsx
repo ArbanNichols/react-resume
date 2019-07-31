@@ -9,7 +9,7 @@ const Intro = () => {
     <Container>
       <Row>
         <Col>
-          <Jumbotron className="jumbo">
+          <Jumbotron className="jumbo-cv">
             <Row>
               <Col xs={12} sm={12} md={4} lg={3}>
                 <Headshot />
