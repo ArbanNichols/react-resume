@@ -13,14 +13,17 @@ const Resume = props => {
           <Jumbotron className="jumbo-resume">
             <article>
               {experiences.map(
-                ({ company, title, dates, location, bullets }) => (
+                ({ company, icon, title, dates, location, tasks, project, highlights }) => (
                   <Experience
                     key={uuid()}
                     company={company}
+                    icon={icon}
                     title={title}
                     dates={dates}
                     location={location}
-                    bullets={bullets}
+                    tasks={tasks}
+                    project={project}
+                    highlights={highlights}
                   />
                 ),
               )}
