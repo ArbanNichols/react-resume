@@ -12,7 +12,7 @@ module.exports = env => {
   const { PLATFORM } = env;
   return merge([
     {
-      entry: ['core-js', APP_DIR],
+      entry: ['core-js-bundle', APP_DIR],
       module: {
         rules: [
           {
