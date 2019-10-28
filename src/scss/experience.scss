@@ -7,16 +7,12 @@ article {
 }
 
 .experience {
-  margin-left: 40px;
+  margin-left: 15px;
   margin-bottom: 20px;
 }
 
 .project-highlight {
   margin-top: 15px;
-}
-
-h4 {
-  margin-bottom: 5px;
 }
 
 .dates {
@@ -28,34 +24,37 @@ h4 {
   top: -5px;
 }
 
-h6 {
-  margin-top: 18px;
-}
-
 ion-icon + h6 {
   display: inline;
   position: relative;
-  top: -5px;
+  top: -6px;
 }
 
 hr {
-  border-top: 1px solid  orangered;
-  margin-top: 0;
-  margin-bottom: 0;
+  border-top: 1.5px solid  #558087;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 ion-icon[name="pin"] {
+  position: relative;
+  top: 1.9px;
   font-size:16px;
   color: $naranja;
 }
 
 ion-icon[name="git-branch"] {
   font-size: 24px;
+  margin-right: 3px;
   color: $reactBlue;
 }
 
+ion-icon[name="sunny"] {
+  font-size: 24px;
+  margin-right: 5px;
+}
+
 ul {
-  margin-top: 5px;
   padding-left: 25px;
 }
 

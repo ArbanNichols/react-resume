@@ -7,16 +7,16 @@ const Experience = ({ ...props }) => {
   return (
     <div className="experience">
       <h4>{company}</h4>
+      <strong>{title}</strong>
       <div><ion-icon name="pin"></ion-icon>
         {' '}{location}
         <em className="dates">
           {dates}
         </em>
       </div>
-      <strong>{title}</strong>
-      <br />
-      <h6>Daily Tasks</h6>
       <hr />
+      <ion-icon name="sunny"></ion-icon>
+      <h6>Daily Tasks</h6>
       <ul>
         {tasks.map(task => (
           <li key={uuid()}>{task}</li>
