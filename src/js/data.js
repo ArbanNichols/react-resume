@@ -13,6 +13,11 @@ const resume = [
     ],
     project: 'Periodic Table of Software Tools',
     highlights: [
+      'Refactored preliminary JQuery codebase to a container and presentational architecture using React.Js components.',
+      'Increased UI responsiveness by 10ms after refactoring JQuery DOM manipulations to React.Js event handlers',
+      'First on team to implement Spring Boot React CRUD application',
+      'Wrote SQL schema and CRUD operations for persisting application state',
+      'Deployed and managed application on Cloud Foundry instance',
     ],
   },
   {
@@ -27,7 +32,7 @@ const resume = [
       'Assisted in the development of VBA and Python scripts to streamline data analysis, code documentation, and document parsing.',
       'Advocated for the use of a MS Visual Studio plugin that allowed for fast, standardized code documentation templates for department wide use.',
     ],
-    project: '',
+    project: 'Embedded Messaging Proxy Tool',
     highlights: [],
   },
   {
