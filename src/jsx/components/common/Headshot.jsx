@@ -19,14 +19,14 @@ const Headshot = () => {
       <Image src={headshot} rounded />
       <p>
         arban.nichs@gmail.com
-        <i className="icon ion-md-copy" onClick={handleClick} />
+        <ion-icon name="copy" onClick={handleClick}></ion-icon>
       </p>
       <div className="links">
         <a href="https://linkedin.com/in/arban-nichols" target="_blank">
-          <i className="icon ion-logo-linkedin" />
+          <ion-icon name="logo-linkedin" />
         </a>
         <a href="https://github.com/ArbanNichols" target="_blank">
-          <i className="icon ion-logo-github" />
+          <ion-icon name="logo-github" />
         </a>
       </div>
     </div>
