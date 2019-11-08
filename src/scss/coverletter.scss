@@ -9,6 +9,17 @@ $mid-screen-size: 768px;
   animation: 2s ease-in-out infinite flash;
 }
 
+.jumbo-cv {
+  animation-name: fadeIn;
+  animation-duration: 2s;
+  background-color: rgba(52, 58, 64, 0.918);
+  color: #e8ddd0;
+
+  .row {
+    justify-content: center;
+  }
+}
+
 .coverletter {
   h1 {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',

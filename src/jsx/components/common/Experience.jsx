@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import uuid from '../../../js/utils';
 import Collapse from 'react-bootstrap/Collapse'
-import { Row, Col, Container, Jumbotron } from 'react-bootstrap';
+import { Col, Jumbotron } from 'react-bootstrap';
 
 
 const Experience = ({ experience, ...props }) => {
