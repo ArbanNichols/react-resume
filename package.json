@@ -12,8 +12,8 @@
   ],
   "main": "index.jsx",
   "scripts": {
-    "compile": "webpack --config webpack.config.prod.js --display-error-details --display-reasons --colors --env.PLATFORM=local",
-    "start": "webpack-dev-server --config webpack.config.dev.js --colors --env.PLATFORM=local",
+    "compile": "webpack --config webpack.prod.js --display-error-details --display-reasons --colors",
+    "start": "webpack-dev-server --config webpack.dev.js --colors",
     "deploy": "gh-pages -d build"
   },
   "dependencies": {
