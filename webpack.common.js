@@ -2,14 +2,22 @@ const path = require('path');
 const webpack = require('webpack');
 
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const APP_DIR = path.resolve(__dirname, './src/');
-const devMode = process.env.NODE_ENV !== 'production';
+const HOME_DIR = path.resolve(__dirname, './src/jsx/layout/Intro.jsx');
+const RESUME_DIR = path.resolve(__dirname, './src/jsx/layout/Resume.jsx');
 
 module.exports = {
-  entry: ['core-js-bundle', APP_DIR],
+  entry: {
+    main: ['core-js-bundle', '@babel/polyfill', APP_DIR],
+    intro: HOME_DIR,
+    resume: RESUME_DIR,
+  },
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].[hash:9].js'
+  },
   module: {
     rules: [
       {
@@ -18,14 +26,6 @@ module.exports = {
         use: {
           loader: 'babel-loader',
         },
-      },
-      {
-        test: /\.(scss|css)$/,
-        use: [
-          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
-          'css-loader',
-          'sass-loader',
-        ],
       },
       {
         test: /\.(ico|jpg|png)$/,
@@ -38,6 +38,23 @@ module.exports = {
         },
       },
     ],
+  },
+  optimization: {
+    moduleIds: 'hashed',
+    splitChunks: {
+      chunks: 'all',
+      maxInitialRequests: Infinity,
+      minSize: 0,
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name(module) {
+            const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
+            return `npm.${packageName.replace('@', '')}`;
+          }
+        }
+      }
+    }
   },
   plugins: [
     new CopyWebpackPlugin([{ from: 'src/static' }]),

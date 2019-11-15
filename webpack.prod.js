@@ -9,12 +9,24 @@ var common = require('./webpack.common.js');
 
 module.exports = merge(common, {
   mode: 'production',
+  module: {
+    rules: [{
+      test: /\.(scss|css)$/,
+      use: [
+        MiniCssExtractPlugin.loader,
+        'css-loader',
+        'sass-loader',
+      ],
+    }]
+  },
   optimization: {
-    minimizer: [new TerserPlugin()],
+    minimizer: [
+      new TerserPlugin({}),
+      new OptimizeCssAssetsPlugin({})
+    ],
   },
   plugins: [
     new MiniCssExtractPlugin(),
-    new OptimizeCssAssetsPlugin(),
     new Visualizer({ filename: './statistics.html' }),
   ],
 });

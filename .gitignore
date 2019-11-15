@@ -1,6 +1,8 @@
 node_modules/
 dist/
 
+stats.json
+
 *.log
 *.iml
 .idea
