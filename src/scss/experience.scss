@@ -6,17 +6,63 @@ article {
   justify-content: center;
 }
 
-.experience {
-  margin-left: 40px;
-  margin-bottom: 20px;
+.project-highlight {
+  margin-top: 15px;
 }
 
-.ion-md-pin {
+.dates {
+  float: right;
+}
+
+.project-name {
+  position: relative;
+  top: -5px;
+}
+
+ion-icon + h6 {
+  display: inline;
+  position: relative;
+  top: -6px;
+}
+
+hr {
+  border-top: 1.5px solid  #558087;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+ion-icon[name="pin"] {
+  position: relative;
+  top: 1.9px;
+  font-size:16px;
   color: $naranja;
 }
 
+ion-icon[name="git-branch"] {
+  font-size: 24px;
+  margin-right: 3px;
+  color: $reactBlue;
+}
+
+ion-icon[name="sunny"] {
+  font-size: 24px;
+  margin-right: 5px;
+  color: rgb(230, 208, 84)
+}
+
+.description {
+  margin-bottom: 8px;
+}
+
+.dropdown-arrow {
+  position: relative;
+  top: 1px;
+  left: 3px;
+  cursor: pointer;
+  color: rgb(129, 165, 93)
+}
+
 ul {
-  margin-top: 5px;
   padding-left: 25px;
 }
 

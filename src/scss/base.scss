@@ -33,23 +33,32 @@ body {
     background-size: cover;
     background-attachment: fixed;
   }
+
+  a:active, a:focus {
+    outline: 0;
+    border: none;
+    outline-style: none;
+  }
 }
 
 .container {
   margin-top: 100px;
-  align-content: center;
-  justify-content: space-evenly;
 }
 
 .jumbo-cv {
   margin-top: 50px;
   animation-name: fadeIn;
   animation-duration: 2s;
-  background-color: rgba(52, 58, 64, 0.89);
-  color: #fff;
+  background-color: rgba(52, 58, 64, 0.918);
+  color: #e8ddd0;
 }
 
 .jumbo-resume {
+  padding: 32px 48px;
   background-color: rgba(52, 58, 64, 0.95);
-  color: whitesmoke;
+  color: #e8ddd0;
+
+  @media screen and (max-width: $lg-screen-threshold) {
+    padding: 15px;
+  }
 }
