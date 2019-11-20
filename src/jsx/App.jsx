@@ -1,5 +1,9 @@
 import React, { useState, useEffect, Suspense, lazy } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import {
+  HashRouter as Router,
+  Route,
+  Switch
+} from 'react-router-dom';
 
 import Header from './layout/Header';
 import Loading from './components/common/Loading'
@@ -11,22 +15,22 @@ import '../scss/base.scss';
 const App = () => {
 
   return (
-    <>
+    <Router>
       <Suspense fallback={<Loading />}>
         <Header />
         <Switch>
           <Route
             exact
             path="/"
-            render={props => <Intro {...props} />} />
+            component={Intro}
+          />
           <Route
-            exact
             path="/resume"
-            render={props => <Resume {...props} />}
+            component={Resume}
           />
         </Switch>
       </Suspense>
-    </>
+    </Router>
   );
 };
 

@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -16,30 +17,11 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[hash:9].js'
-  },
-  module: {
-    rules: [
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        },
-      },
-      {
-        test: /\.(ico|jpg|png)$/,
-        use: [{ loader: 'file-loader', options: {} }],
-      },
-      {
-        test: /\.svg/,
-        use: {
-          loader: 'svg-url-loader',
-        },
-      },
-    ],
+    filename: '[name].[hash:9].js',
+    chunkFilename: '[name].[hash:9].js',
   },
   optimization: {
+    runtimeChunk: 'single',
     moduleIds: 'hashed',
     splitChunks: {
       chunks: 'all',
@@ -51,10 +33,41 @@ module.exports = {
           name(module) {
             const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
             return `npm.${packageName.replace('@', '')}`;
-          }
+          },
         }
       }
     }
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+        },
+      },
+      {
+        test: /\.(jpe?g|png|gif)$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10 * 1024,
+        },
+      },
+      {
+        test: /\.svg$/,
+        loader: 'svg-url-loader',
+        options: {
+          limit: 10 * 1024,
+          noquotes: true,
+        },
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/,
+        loader: 'image-webpack-loader',
+        enforce: 'pre',
+      },
+    ],
   },
   plugins: [
     new CopyWebpackPlugin([{ from: 'src/static' }]),
@@ -64,6 +77,11 @@ module.exports = {
     }),
     new webpack.ProvidePlugin({
       PropTypes: 'prop-types',
+    }),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      openAnalyzer: false,
+      reportFilename: `./bundle-analysis.html`,
     }),
   ],
   resolve: {

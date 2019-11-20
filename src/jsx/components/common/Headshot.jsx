@@ -16,7 +16,7 @@ const Headshot = () => {
 
   return (
     <div className="headshot">
-      <Image src={headshot} rounded />
+      <Image src={headshot} roundedCircle />
       <p>
         arban.nichs@gmail.com
         <ion-icon name="copy" onClick={handleClick}></ion-icon>

@@ -1,14 +1,13 @@
-var merge = require('webpack-merge');
-
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
-var Visualizer = require('webpack-visualizer-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const Visualizer = require('webpack-visualizer-plugin');
 
+const merge = require('webpack-merge');
 var common = require('./webpack.common.js');
 
 module.exports = merge(common, {
   mode: 'production',
+  devtool: 'source-map',
   module: {
     rules: [{
       test: /\.(scss|css)$/,
@@ -20,10 +19,7 @@ module.exports = merge(common, {
     }]
   },
   optimization: {
-    minimizer: [
-      new TerserPlugin({}),
-      new OptimizeCssAssetsPlugin({})
-    ],
+    minimizer: [new OptimizeCssAssetsPlugin({})]
   },
   plugins: [
     new MiniCssExtractPlugin(),
