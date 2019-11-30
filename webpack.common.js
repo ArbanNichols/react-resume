@@ -1,7 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
 
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+  .BundleAnalyzerPlugin;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -13,12 +14,12 @@ module.exports = {
   entry: {
     main: ['core-js-bundle', '@babel/polyfill', APP_DIR],
     intro: HOME_DIR,
-    resume: RESUME_DIR,
+    resume: RESUME_DIR
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[hash:9].js',
-    chunkFilename: '[name].[hash:9].js',
+    chunkFilename: '[name].[hash:9].js'
   },
   optimization: {
     runtimeChunk: 'single',
@@ -31,9 +32,11 @@ module.exports = {
         vendor: {
           test: /[\\/]node_modules[\\/]/,
           name(module) {
-            const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
+            const packageName = module.context.match(
+              /[\\/]node_modules[\\/](.*?)([\\/]|$)/
+            )[1];
             return `npm.${packageName.replace('@', '')}`;
-          },
+          }
         }
       }
     }
@@ -44,47 +47,47 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
-        },
+          loader: 'babel-loader'
+        }
       },
       {
         test: /\.(jpe?g|png|gif)$/,
         loader: 'url-loader',
         options: {
-          limit: 10 * 1024,
-        },
+          limit: 10 * 1024
+        }
       },
       {
         test: /\.svg$/,
         loader: 'svg-url-loader',
         options: {
           limit: 10 * 1024,
-          noquotes: true,
-        },
+          noquotes: true
+        }
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/,
         loader: 'image-webpack-loader',
-        enforce: 'pre',
-      },
-    ],
+        enforce: 'pre'
+      }
+    ]
   },
   plugins: [
     new CopyWebpackPlugin([{ from: 'src/static' }]),
     new HtmlWebpackPlugin({
       template: './src/index.html',
-      filename: './index.html',
+      filename: './index.html'
     }),
     new webpack.ProvidePlugin({
-      PropTypes: 'prop-types',
+      PropTypes: 'prop-types'
     }),
     new BundleAnalyzerPlugin({
       analyzerMode: 'static',
       openAnalyzer: false,
-      reportFilename: `./bundle-analysis.html`,
-    }),
+      reportFilename: `./bundle-analysis.html`
+    })
   ],
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx']
   }
 };
