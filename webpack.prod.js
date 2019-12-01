@@ -9,20 +9,18 @@ module.exports = merge(common, {
   mode: 'production',
   devtool: 'source-map',
   module: {
-    rules: [{
-      test: /\.(scss|css)$/,
-      use: [
-        MiniCssExtractPlugin.loader,
-        'css-loader',
-        'sass-loader',
-      ],
-    }]
+    rules: [
+      {
+        test: /\.(scss|css)$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+      }
+    ]
   },
   optimization: {
     minimizer: [new OptimizeCssAssetsPlugin({})]
   },
   plugins: [
     new MiniCssExtractPlugin(),
-    new Visualizer({ filename: './statistics.html' }),
-  ],
+    new Visualizer({ filename: './statistics.html' })
+  ]
 });
