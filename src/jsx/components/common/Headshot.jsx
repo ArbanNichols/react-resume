@@ -22,10 +22,18 @@ const Headshot = () => {
         <ion-icon name="copy" onClick={handleClick}></ion-icon>
       </p>
       <div className="links">
-        <a href="https://linkedin.com/in/arban-nichols" target="_blank">
+        <a
+          href="https://linkedin.com/in/arban-nichols"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <ion-icon name="logo-linkedin" />
         </a>
-        <a href="https://github.com/ArbanNichols" target="_blank">
+        <a
+          href="https://github.com/ArbanNichols"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <ion-icon name="logo-github" />
         </a>
       </div>

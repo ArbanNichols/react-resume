@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import uuid from '../../../js/utils';
-import Collapse from 'react-bootstrap/Collapse'
+import Collapse from 'react-bootstrap/Collapse';
 import { Col, Jumbotron } from 'react-bootstrap';
-
 
 const Experience = ({ experience, ...props }) => {
   const {
@@ -24,11 +23,8 @@ const Experience = ({ experience, ...props }) => {
         <h4>{company}</h4>
         <strong>{title}</strong>
         <div>
-          <ion-icon name="pin" />
-          {' '}{location}
-          <em className="dates">
-            {dates}
-          </em>
+          <ion-icon name="pin" /> {location}
+          <em className="dates">{dates}</em>
         </div>
         <hr />
         <ion-icon name="sunny" />
@@ -40,15 +36,19 @@ const Experience = ({ experience, ...props }) => {
         </ul>
         <div className="project-highlight">
           <ion-icon name="git-branch" />
-          <h6><b>Project Highlight - </b></h6>
-          <span className='project-name'>{project}</span>
+          <h6>
+            <b>Project Highlight - </b>
+          </h6>
+          <span className="project-name">{project}</span>
           <p className="description">
             <em>{description}</em>
             <span
               className="dropdown-arrow"
               aria-controls="project-details"
               onClick={() => setOpen(!open)}
-            >▼</span>
+            >
+              ▼
+            </span>
           </p>
           <Collapse in={open}>
             <div id="project-details">

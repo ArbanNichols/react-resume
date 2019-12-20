@@ -6,7 +6,7 @@ function Loading() {
   return (
     <Container>
       <Row>
-        <Col>
+        <Col xs>
           <Card className="loading">
             <CardImg variant="top" src={logo} />
           </Card>
